@@ -122,6 +122,10 @@ $topbar-h: 64px;
             height: 53px;
             background:url('@/assets/images/dash/nav-after.png') no-repeat center;
         }   
+        a{
+            display: block;
+            
+        }
     }
     &__nav {
         display: grid;
@@ -180,40 +184,53 @@ $topbar-h: 64px;
                 padding-left: 20px;
                 color:rgba(255,255,255,0.8);
                 &>i{
-                    width: 16px;
+                    width: 20px;
                     display: inline-block;
                     background-repeat: no-repeat;
+                    background-size: contain;
                 }
             }
             
             &.sec01{
                 i{
-                    height: 13px;
-                    background-image: url("@/assets/images/dash/ico-nav-sec01.png");
+                    height: 20px;
+                    background-image: url("@/assets/images/common/nav-m01.svg");
                 }
             }
             &.sec02{
                 i{
-                    height: 19px;
-                    background-image: url("@/assets/images/dash/ico-nav-sec02.png");
+                    height: 20px;
+                    background-image: url("@/assets/images/common/nav-m02.svg");
                 }
             }
             &.sec03{
                 i{
-                    height: 16px;
-                    background-image: url("@/assets/images/dash/ico-nav-sec03.png");
+                    height: 20px;
+                    background-image: url("@/assets/images/common/nav-m03.svg");
                 }
             }
             &.sec04{
                 i{
-                    height: 16px;
-                    background-image: url("@/assets/images/dash/ico-nav-sec04.png");
+                    height: 20px;
+                    background-image: url("@/assets/images/common/nav-m04.svg");
                 }
             }
             &.sec05{
                 i{
-                    height: 18px;
-                    background-image: url("@/assets/images/dash/ico-nav-sec05.png");
+                    height: 20px;
+                    background-image: url("@/assets/images/common/nav-m05.svg");
+                }
+            }
+            &.sec06{
+                i{
+                    height: 20px;
+                    background-image: url("@/assets/images/common/nav-m06.svg");
+                }
+            }
+            &.sec07{
+                i{
+                    height: 20px;
+                    background-image: url("@/assets/images/common/nav-m07.svg");
                 }
             }
             & + .nav-sub{
@@ -234,27 +251,37 @@ $topbar-h: 64px;
                 }
                 &.sec01{
                     i{
-                        background-image: url("@/assets/images/dash/ico-nav-sec01-on.png");
+                        background-image: url("@/assets/images/common/nav-m01-on.svg");
                     }
                 }
                 &.sec02{
                     i{
-                        background-image: url("@/assets/images/dash/ico-nav-sec02-on.png");
+                        background-image: url("@/assets/images/common/nav-m02-on.svg");
                     }
                 }
                 &.sec03{
                     i{
-                        background-image: url("@/assets/images/dash/ico-nav-sec03-on.png");
+                        background-image: url("@/assets/images/common/nav-m03-on.svg");
                     }
                 }
                 &.sec04{
                     i{
-                        background-image: url("@/assets/images/dash/ico-nav-sec04-on.png");
+                        background-image: url("@/assets/images/common/nav-m04-on.svg");
                     }
                 }
                 &.sec05{
                     i{
-                        background-image: url("@/assets/images/dash/ico-nav-sec05-on.png");
+                        background-image: url("@/assets/images/common/nav-m05-on.svg");
+                    }   
+                }
+                &.sec06{
+                    i{
+                        background-image: url("@/assets/images/common/nav-m06-on.svg");
+                    }
+                }
+                &.sec07{
+                    i{
+                        background-image: url("@/assets/images/common/nav-m07-on.svg");
                     }   
                 }
             }

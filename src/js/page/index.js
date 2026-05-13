@@ -180,3 +180,67 @@ listheads.forEach((head, i) => {
     row.style.gridTemplateColumns = gridTemplate;
   });
 });
+
+function initBrightnessControls() {
+  document.querySelectorAll('.adx-br').forEach((control) => {
+    const bar = control.querySelector('.adx-br__bar');
+    const fill = control.querySelector('.adx-br__fill');
+    const thumb = control.querySelector('.adx-br__thumb');
+    const valueText = control.querySelector('.adx-br__val');
+
+    if (!bar || !fill || !thumb || !valueText) return;
+
+    let currentValue = Number(bar.getAttribute('aria-valuenow')) || 0;
+    let isDragging = false;
+
+    const clamp = (value) => {
+      return Math.max(0, Math.min(100, value));
+    };
+
+    const render = (value) => {
+      currentValue = clamp(value);
+      const displayValue = Math.round(currentValue);
+
+      fill.style.width = `${displayValue}%`;
+      thumb.style.left = `calc(${displayValue}% - 9px)`;
+
+      bar.setAttribute('aria-valuenow', displayValue);
+      bar.setAttribute('aria-valuetext', `${displayValue}%`);
+
+      valueText.innerHTML = `${displayValue}<span>%</span>`;
+    };
+
+    const updateFromPointer = (event) => {
+      const rect = bar.getBoundingClientRect();
+      if (!rect.width) return;
+
+      const percent = ((event.clientX - rect.left) / rect.width) * 100;
+      render(percent);
+    };
+
+    render(currentValue);
+
+    bar.addEventListener('pointerdown', (event) => {
+      isDragging = true;
+      bar.setPointerCapture?.(event.pointerId);
+      updateFromPointer(event);
+    });
+
+    bar.addEventListener('pointermove', (event) => {
+      if (!isDragging) return;
+      updateFromPointer(event);
+    });
+
+    bar.addEventListener('pointerup', (event) => {
+      isDragging = false;
+      bar.releasePointerCapture?.(event.pointerId);
+    });
+
+    bar.addEventListener('pointercancel', (event) => {
+      isDragging = false;
+      bar.releasePointerCapture?.(event.pointerId);
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initBrightnessControls);
