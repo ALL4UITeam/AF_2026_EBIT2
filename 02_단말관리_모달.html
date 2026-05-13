@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LIVE BUS</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./assets/fonts/esamanru.css">
+    <link rel="stylesheet" href="./assets/fonts/Freesentation.css">
+    <link rel="stylesheet" href="./lib/simplebar/simplebar.css">
+    <link rel="stylesheet" href="./lib/dragula/dragula.min.css">
+    <link rel="stylesheet" href="./lib/swiper/swiper-bundle.min.css">
+    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+    <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+    <script src="./lib/simplebar/simplebar.min.js"></script>
+    <script src="./lib/swiper/swiper-bundle.min.js"></script>
+    <script src="./lib/dragula/dragula.min.js"></script>  <script type="module" src="./assets/js/index2.js"></script>
+  <link rel="stylesheet" href="./assets/css/index.css">
+</head>
+
+<body>
+
+    <div class="app">
+        <!-- 상단바 -->
+        <header class="topbar" role="banner">
+            
+            <div class="topbar__brand" aria-label="브랜드">
+                <h2 class="brand__logo"><img src="./assets/images/logo.svg" alt="" style="height: 30px;"></h2>
+            </div>
+        
+            <div class="topbar__actions">
+                <button class="icon-notice" onclick="openModal('alertModal')" aria-label="알림">
+                    <span>1</span>
+                </button>
+                <div class="avatar">
+                    <span class="avatar__circle" aria-hidden="true"></span>
+                    <span class="avatar__label">관리자님</span>
+                </div>
+                <label class="burger-btn" for="nav-toggle" aria-label="메뉴 열기/닫기">
+                    <span class="burger"></span>
+                </label>
+            </div>
+        </header>
+        
+        <!-- 좌측 사이드바 -->
+        <aside class="sidenav" aria-label="주 메뉴">
+            <div class="sidenav__logo">
+                <a href=""><img src="./assets/images/white-logo.svg" alt=""></a>
+            </div>
+        
+            <nav class="sidenav__nav" data-simplebar>
+                <details class="nav-sec">
+                    <summary class="sec01">
+                        <span><i class="icon"></i>대시보드</span>
+                    </summary>
+                    <details class="nav-sub">
+                        <summary>대시보드</summary>
+                        <ul class="nav-list">
+                            <li><a href="#">대시보드</a></li>
+                    </details>
+                </details>
+                <details class="nav-sec">
+                    <summary class="sec02">
+                        <span><i class="icon"></i>앱관리</span>
+                    </summary>
+                    <details class="nav-sub">
+                        <summary>앱 관리</summary>
+                        <ul class="nav-list">
+                            <li><a href="#">앱 관리</a></li>
+                            <li><a href="#">배포 관리</a></li>
+                        </ul>
+                    </details>
+                </details>
+        
+                <details class="nav-sec" open>
+                    <summary class="sec03">
+                        <span><i class="icon"></i>단말관리</span>
+                    </summary>
+        
+                    <details class="nav-sub" open>
+                        <summary>단말관리</summary>
+                        <ul class="nav-list">
+                            <li class="is-active"><a href="#">운영 대시보드</a></li>
+                            <li><a href="#">단말 등록</a></li>
+                            <li><a href="#">그룹 관리</a></li>
+                            <li><a href="#">단말 상태 현황</a></li>
+                            <li><a href="#">원격 제어</a></li>
+                        </ul>
+                    </details>
+                </details>
+        
+                <details class="nav-sec">
+                    <summary class="sec04">
+                        <span><i class="icon"></i>컨텐츠관리</span>
+                    </summary>
+                    <details class="nav-sub">
+                        <summary>컨텐츠관리</summary>
+                        <ul class="nav-list">
+                            <li><a href="#">텍스트 설정</a></li>
+                            <li><a href="#">텍스트 관리</a></li>
+                        </ul>
+                    </details>
+                </details>
+        
+                <details class="nav-sec">
+                    <summary class="sec05">
+                        <span><i class="icon"></i>장비분석</span>
+                    </summary>
+                    <details class="nav-sub">
+                        <summary>장비분석</summary>
+                        <ul class="nav-list">
+                            <li><a href="#">분석 현황</a></li>
+                            <li><a href="#">교체주기 분석</a></li>
+                            <li><a href="#">기기 유형 관리</a></li>
+                            <li><a href="#">배터리 관리</a></li>
+                        </ul>
+                    </details>
+                </details>
+                
+                <details class="nav-sec">
+                    <summary class="sec06">
+                        <span><i class="icon"></i>운영관리</span>
+                    </summary>
+                    <details class="nav-sub">
+                        <summary>운영관리</summary>
+                        <ul class="nav-list">
+                            <li><a href="#">운영관리</a></li>
+                        </ul>
+                    </details>
+                </details>
+        
+                <details class="nav-sec">
+                    <summary class="sec07">
+                        <span><i class="icon"></i>시스템관리</span>
+                    </summary>
+                    <details class="nav-sub">
+                        <summary>시스템관리</summary>
+                        <ul class="nav-list">
+                            <li><a href="#">사용자 관리</a></li>
+                            <li><a href="#">그룹 관리</a></li>
+                            <li><a href="#">권한 관리</a></li>
+                            <li><a href="#">작업 이력</a></li>
+                            <li><a href="#">공통 코드 관리</a></li>
+                        </ul>
+                    </details>
+                </details>
+                
+            </nav>
+            <div class="nav-foot">
+                <dl class="call">
+                    <dt>고객센터 전화번호</dt>
+                    <dd>20)1234-1234</dd>
+                </dl>
+                <dl class="mail">
+                    <dt>대표 이메일</dt>
+                    <dd>all4land@all4land.com</dd>
+                </dl>
+            </div>
+        </aside>        <!-- 컨텐츠 영역 -->
+        <main class="content" role="main" data-simplebar>
+            <button onclick="openModal('mdm-status-detail-info')">단말 상태 이력</button>
+        </main>
+    </div>
+
+    <!-- 이상알림 모달 -->
+    <div id="mdm-status-detail-info" class="modal active">
+        <div class="modal-dialog" style="width: 960px;">
+            <div class="modal-header">
+                <span>단말 상태 이력 상세</span>
+                <button onclick="closeModal('mdm-status-detail-info')"></button>
+            </div>
+            <div class="modal-content">
+                <div class="mdm-status-modal mdm-status-modal--info">
+                    <section class="modal-card mdm-status-modal__summary">
+                        <div class="modal-card__header">
+                            <h3 class="modal-card__title">현재 단말 정보</h3>
+                        </div>
+                        <div class="mdm-status-modal__head-grid">
+                            <div class="mdm-status-modal__head-box">
+                                <p>단말 ID</p><strong>BISD009</strong>
+                            </div>
+                            <div class="mdm-status-modal__head-box">
+                                <p>정류장 정보</p><strong>BJ-009_양천향교역 1번 출구</strong>
+                            </div>
+                            <div class="mdm-status-modal__head-box">
+                                <p>복합 상태</p><span class="al-badge al-badge--danger al-badge--sm">긴급</span>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="modal-card mdm-status-modal__content">
+                        <div class="modal-card__body">
+                            <div class="tabs tabs--line" data-al-tabs>
+                                <div class="tab--container">
+
+                                    <div class="tabs__list " role="tablist" aria-label="단말 상태 탭">
+                                        <button type="button" class="tabs__tab tab--item active" role="tab"
+                                            id="mdm-status-info-tab-a" data-tab="mdm-status-info-a" aria-selected="true"
+                                            aria-controls="mdm-status-info-a">
+                                            단말 정보
+                                        </button>
+
+                                        <button type="button" class="tabs__tab tab--item" role="tab"
+                                            id="mdm-status-info-tab-b" data-tab="mdm-status-info-b"
+                                            aria-selected="false" aria-controls="mdm-status-info-b">
+                                            상태 이력
+                                        </button>
+
+                                        <button type="button" class="tabs__tab tab--item" role="tab"
+                                            id="mdm-status-info-tab-c" data-tab="mdm-status-info-c"
+                                            aria-selected="false" aria-controls="mdm-status-info-c">
+                                            원격 제어
+                                        </button>
+                                    </div>
+                                    <div class="tab--content">
+                                        <div class="tab--panel active" id="mdm-status-info-a" role="tabpanel"
+                                            aria-labelledby="mdm-status-info-tab-a">
+
+                                            <div class="mdm-status-modal__data-grid">
+                                                <div class="mdm-status-modal__block">
+                                                    <h4>기본 정보</h4>
+
+                                                    <ul class="round-list">
+                                                        <li class="round-list__item">
+                                                            <span class="label">안드로이드 ID</span>
+                                                            <strong class="value">AD-012</strong>
+                                                        </li>
+                                                        <li class="round-list__item">
+                                                            <span class="label">에이전트 앱버전</span>
+                                                            <strong class="value">1.2 버전</strong>
+                                                        </li>
+                                                        <li class="round-list__item">
+                                                            <span class="label">패키지명</span>
+                                                            <strong class="value">class.1234.1234</strong>
+                                                        </li>
+                                                        <li class="round-list__item">
+                                                            <span class="label">CPU 사용률</span>
+                                                            <strong class="value danger">92<small>%</small></strong>
+                                                            <span
+                                                                class="al-badge al-badge--danger al-badge--sm">치명</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="mdm-status-modal__block mdm-status-modal__block--dashed">
+                                                </div>
+
+                                                <div class="mdm-status-modal__block">
+                                                    <h4>상세 정보</h4>
+
+                                                    <ul class="round-list">
+                                                        <li class="round-list__item">
+                                                            <span class="label">배터리 잔량</span>
+                                                            <strong class="value warn">42<small>%</small></strong>
+                                                            <span
+                                                                class="al-badge al-badge--warn al-badge--sm">저전력상태</span>
+                                                        </li>
+                                                        <li class="round-list__item">
+                                                            <span class="label">끊긴 시간</span>
+                                                            <strong class="value">
+                                                                2026-04-09 <span class="time">13:00:02.093</span>
+                                                            </strong>
+                                                        </li>
+                                                        <li class="round-list__item">
+                                                            <span class="label">이벤트 상태</span>
+                                                            <strong class="value">오프라인</strong>
+                                                        </li>
+                                                        <li class="round-list__item">
+                                                            <span class="label">마지막 수신 시간</span>
+                                                            <strong class="value">
+                                                                2026-04-09 <span class="time">13:00:02.093</span>
+                                                            </strong>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="tab--panel" id="mdm-status-info-b" role="tabpanel"
+                                            aria-labelledby="mdm-status-info-tab-b">
+                                            <div class="mdm-scroll" data-simplebar>
+                                                <div class="mdm-status-modal__filter-row">
+                                                    <div class="form__date_group">
+                                                        <label for="mdm-status-his-date">시작시간</label>
+                                                        <span class="form__field form__field--date">
+                                                            <input class="form-control" type="date" class="date-picker" value="2025-06-11">
+                                                        </span>
+                                                        <span class="form__field form__field--time"><input
+                                                                class="form-control" type="text" value="오전 06시"
+                                                                readonly></span>
+                                                    </div>
+                                                    <div class="form__date_group">
+                                                        <label for="mdm-status-his-time">종료시간</label>
+                                                        <span class="form__field form__field--date">
+                                                            <input class="form-control" type="date" class="date-picker" value="2025-06-11">
+                                                        </span>
+                                                        <span class="form__field form__field--time"><input
+                                                                class="form-control" type="text" value="오전 06시"
+                                                                readonly></span>
+                                                    </div>
+                                                    <button type="button" class="btn primary small">조회</button>
+                                                </div>
+                                                <div class="mdm-status-modal__chart-grid">
+                                                    <div class="chart-placeholder">차트 영역</div>
+                                                    <div class="chart-placeholder">차트 영역</div>
+                                                    <div class="chart-placeholder">차트 영역</div>
+                                                    <div class="chart-placeholder">차트 영역</div>
+                                                </div>
+
+                                                <div class="divider"></div>
+
+                                                <div class="mdm-status-modal__table-head">
+                                                    <p>총 <strong>200</strong>건</p><span class="form__field"><select
+                                                            class="form-control">
+                                                            <option>상태</option>
+                                                        </select></span>
+                                                </div>
+                                                <div class="table-wrapper mb-20 mdm-status-modal__history-list">
+                                                    <div class="listhead">
+                                                        <span>상태 수집 시간</span>
+                                                        <span>CPU<br>사용률</span>
+                                                        <span>RAM<br>사용률</span>
+                                                        <span class="nowrap">배터리 잔량<br>/온도</span>
+                                                        <span>위도<br>/경도</span>
+                                                        <span>연결 상태</span>
+                                                        <span>끊긴 시간<br>(사유)</span>
+                                                        <span>네트워크<br>신호 세기</span>
+                                                    </div>
+                                                    <div class="listbody">
+                                                        <ul class="board">
+                                                            <li class="table-cell__row">
+                                                                <div class="table-cell">
+                                                                    <div class="time-wrap">
+                                                                        <span class="date">2026-01-26</span>
+                                                                        <span class="time">21:40:22.093</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="table-cell">
+                                                                    <span class="unit-value">52<small>%</small></span>
+                                                                </div>
+                                                                <div class="table-cell">
+                                                                    <span class="unit-value">52<small>%</small></span>
+                                                                </div>
+                                                                <div class="table-cell">
+                                                                    <div class="unit-value-wrap">
+                                                                        <span class="unit-value">78<small>%</small></span>
+                                                                        <span class="unit-value">41.2<small>°C</small></span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="table-cell">
+                                                                    <div class="unit-value-wrap">
+                                                                        <span class="unit-value">37.5665</span>
+                                                                        <span class="unit-value">126.9780</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="table-cell">정상</div>
+                                                                <div class="table-cell">
+                                                                    <div class="unit-text-wrap">
+                                                                        <span class="unit-text">정상</span>
+                                                                        <span class="unit-text-desc">(통신 불량)</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="table-cell">10dBm</div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <nav class="board--paging pagination">
+                                                    <!-- <a href="#" class="fir" title="맨 처음"><i class="material-symbols-outlined">keyboard_double_arrow_left</i></a> -->
+                                                    <a href="#" class="prev" title="이전"><i class="material-symbols-outlined"><img src="./assets/images/paging-arrow-left.png" alt="다음"></i><span>이전</span></a>
+                                                    <span class="paging">
+                                                        <a href="#">1</a>
+                                                        <a href="#">2</a>
+                                                        <a href="#">3</a>
+                                                        <strong title="현재 페이지">4</strong>
+                                                        <a href="#">5</a>
+                                                    </span>
+                                                    <a href="#" class="next" title="다음"><span>다음</span><i class="material-symbols-outlined"><img src="./assets/images/paging-arrow-right.png" alt="다음"></i></a>
+                                                    <!-- <a href="#" class="last" title="맨 끝"><i class="material-symbols-outlined">keyboard_double_arrow_right</i></a> -->
+                                                </nav>                                            </div>
+                                        </div>
+
+                                        <div class="tab--panel" id="mdm-status-info-c" role="tabpanel"
+                                            aria-labelledby="mdm-status-info-tab-c">
+                                            <div class="mdm-scroll" data-simplebar>
+                                                <div class="mdm-status-modal__remote-grid">
+                                                    <div class="left">
+                                                        <h4>원격 제어 명령</h4>
+                                                        <div class="mdm-status-modal__command"><span
+                                                                class="form__field"><select class="form-control">
+                                                                    <option>시스템 재부팅</option>
+                                                                </select></span><button type="button"
+                                                                class="btn primary small">요청</button></div>
+                                                        <div class="mdm-status-modal__dashed"></div>
+                                                        <h4>단말 상태 정보</h4>
+                                                        <ul class="round-list">
+                                                            <li class="round-list__item"><span class="label">CPU
+                                                                    사용률</span><span
+                                                                    class="al-badge al-badge--danger al-badge--sm">치명</span><strong
+                                                                    class="danger">92%</strong></li>
+                                                            <li class="round-list__item"><span class="label">RAM
+                                                                    사용률</span><span
+                                                                    class="al-badge al-badge--warn al-badge--sm">경미</span><strong
+                                                                    class="warn">62%</strong></li>
+                                                            <li class="round-list__item"><span class="label">배터리
+                                                                    잔량</span><strong class="value">91%</strong></li>
+                                                            <li class="round-list__item"><span class="label">통신
+                                                                    상태</span><strong>불량</strong></li>
+                                                            <li class="round-list__item"><span class="label">끊긴
+                                                                    시간</span><strong>
+                                                                    <div class="time-wrap inline">
+                                                                        <span class="date">2026-01-26</span>
+                                                                        <span class="time">21:40:22.093</span>
+                                                                    </div>
+                                                                </strong></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="right">
+                                                        <h4>마지막 요청 스냅샷</h4>
+                                                        <div class="image-placeholder">이미지 영역</div>
+                                                        <div class="mdm-status-modal__dashed"></div>
+                                                        <div class="mdm-status-modal__table-head">
+                                                            <p>원격 제어 이력</p><span class="form__field" style="width: 150px;">
+                                                                <select class="form-control">
+                                                                    <option>시스템 재부팅</option>
+                                                                </select></span>
+                                                        </div>
+                                                        <div class="table-wrapper mdm-status-modal__remote-history-list">
+                                                            <div class="listhead">
+                                                                <span>원격 요청 시간</span>
+                                                                <span>원격 제어 명령</span>
+                                                            </div>
+                                                            <div class="listbody">
+                                                                <ul class="board">
+                                                                    <li class="table-cell__row">
+                                                                        <div class="table-cell">
+                                                                            <div class="time-wrap">
+                                                                                <span class="date">2026-01-26</span>
+                                                                                <span class="time">21:40:22.093</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="table-cell">시스템 재부팅</div>
+                                                                    </li>
+                                                                    <li class="table-cell__row">
+                                                                        <div class="table-cell">
+                                                                            <div class="time-wrap">
+                                                                                <span class="date">2026-01-26</span>
+                                                                                <span class="time">21:40:22.093</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="table-cell">화면 밝기 조정 ( 50% )</div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </section>
+                </div>
+                <div class="modal--vehicle-dispatch__footer">
+                    <button type="button"
+                        class="btn round--btn modal--vehicle-dispatch__footer-btn modal--vehicle-dispatch__footer-btn--ghost"
+                        onclick="closeModal('mdm-status-detail-info')">취소</button>
+                    <div class="modal--vehicle-dispatch__footer-right">
+                        <button type="button"
+                            class="btn round--btn modal--vehicle-dispatch__footer-btn modal--vehicle-dispatch__footer-btn--primary">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 이상알림 모달 -->
+    <div id="alertModal" class="modal">
+    	<div class="modal-dialog">
+    		<div class="modal-header">
+    			<span>수신이상 알림</span>
+    			<button onclick="closeModal('alertModal')"></button>
+    		</div>
+    		<div class="modal-content">
+    			<div class="modal--alerts">
+    				<div class="modal--alerts__col">
+    					<h3>BIT 수신 이상 알림</h3>
+    					<div class="modal--alerts__item">
+    						<div class="head">
+    							<span class="chip" style="background: #ffddd1;"><i aria-hidden="true" style="background: #f1784a;"></i>통신이상</span>
+    							<span class="data">2025-08-26 15:23</span>
+    						</div>
+    						<h4 class="ti">한빛아파트 (신관초방면) 통신이상</h4>
+    						<p class="info">(ARS : 1472 / BIT ID : 35)</p>
+    					</div>
+    					<div class="modal--alerts__item">
+    						<div class="head">
+    							<span class="chip" style="background: #ffddd1;"><i aria-hidden="true" style="background: #f1784a;"></i>통신이상</span>
+    							<span class="data">2025-08-26 15:23</span>
+    						</div>
+    						<h4 class="ti">한빛아파트 (신관초방면) 통신이상</h4>
+    						<p class="info">(ARS : 1472 / BIT ID : 35)</p>
+    					</div>
+    					<div class="modal--alerts__item">
+    						<div class="head">
+    							<span class="chip" style="background: #ffddd1;"><i aria-hidden="true" style="background: #f1784a;"></i>통신이상</span>
+    							<span class="data">2025-08-26 15:23</span>
+    						</div>
+    						<h4 class="ti">한빛아파트 (신관초방면) 통신이상</h4>
+    						<p class="info">(ARS : 1472 / BIT ID : 35)</p>
+    					</div>
+    				</div>
+    				<div class="modal--alerts__col">
+    					<h3>버스 수신 이상 알림</h3>
+    					<div class="modal--alerts__item">
+    						<div class="head">
+    							<span class="chip" style="background: #e7e7f6;"><i aria-hidden="true" style="background: #f1784a;"></i>통신이상</span>
+    							<span class="data">2025-08-26 15:23</span>
+    						</div>
+    						<h4 class="ti">32-5번 통신이상</h4>
+    						<p class="info">(ARS : 1472 / BIT ID : 35)</p>
+    					</div>
+    					<div class="modal--alerts__item">
+    						<div class="head">
+    							<span class="chip" style="background: #e7e7f6;"><i aria-hidden="true" style="background: #f1784a;"></i>통신이상</span>
+    							<span class="data">2025-08-26 15:23</span>
+    						</div>
+    						<h4 class="ti">32-5번 통신이상</h4>
+    						<p class="info">(ARS : 1472 / BIT ID : 35)</p>
+    					</div>
+    					<div class="modal--alerts__item">
+    						<div class="head">
+    							<span class="chip" style="background: #e7e7f6;"><i aria-hidden="true" style="background: #f1784a;"></i>통신이상</span>
+    							<span class="data">2025-08-26 15:23</span>
+    						</div>
+    						<h4 class="ti">32-5번 통신이상</h4>
+    						<p class="info">(ARS : 1472 / BIT ID : 35)</p>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+</body>
+
+</html>
