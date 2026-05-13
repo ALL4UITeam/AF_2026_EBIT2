@@ -9804,9 +9804,6 @@ select {
   display: table-row;
   align-items: center;
 }
-.mdm-status-modal__remote-history-list .listbody ul.board li .table-cell {
-  border-top: 1px solid #e2e8f0;
-}
 .mdm-status-modal__remote-history-list .listbody ul.board li:first-child .table-cell {
   border-top: none;
 }
