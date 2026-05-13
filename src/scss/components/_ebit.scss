@@ -1196,6 +1196,10 @@
     &__remote-history-list {
         min-width: 0;
 
+        .listhead {
+            table-layout: fixed;
+        }
+
         .listhead span {
             font-size: 13px;
             font-weight: 600;
@@ -1215,19 +1219,39 @@
             }
         }
 
-        .listbody ul li {
-            border-top: 1px solid #e2e8f0;
-            align-items: center;
+        .listbody ul.board {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            border-collapse: collapse;
+        }
 
-            &:first-child {
-                border-top: none;
-            }
+        .listbody ul li {
+            display: table-row;
+            align-items: center;
+        }
+
+        .listbody ul.board li .table-cell {
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .listbody ul.board li:first-child .table-cell {
+            border-top: none;
         }
 
         .listbody .table-cell {
+            display: table-cell;
+            vertical-align: middle;
             font-size: 15px;
             color: #1e293b;
             text-align: center;
+
+            &:first-child {
+                width: 166px;
+            }
 
             .time-wrap {
                 align-items: center;
